@@ -41,12 +41,16 @@ export function ShopPage() {
 
     return (    
         <Container>
-            <Wrapper>    
+             <Wrapper> 
+             <Grid container spacing={2}>      
                 {products.map((product) => (
+                     <Grid item xs={12} sm={6} md={3}  key={product.id}>
                     <ProductBlock product={product} onAddToBasket={() => handleAddToBasket(product)} />
-                ))}
+               </Grid>
+               ))}
+       </Grid>
             </Wrapper>
-            <Basket />
+               <Basket />
         </Container>
     )
 }
